@@ -57,9 +57,9 @@ export const TrustGrid: React.FC = () => {
         <RevealTransition type="clip-path">
           <SectionHeading
             eyebrow="COMPRA INFORMADA"
-            title="Compra con información clara."
+            title="Menos dudas antes de abrir WhatsApp."
             italicWord="clara"
-            paragraph="Antes de escribir por WhatsApp, el cliente puede revisar los detalles que normalmente tendría que preguntar por mensaje."
+            paragraph="Cuando el cliente puede revisar el estado, la garantía, las formas de pago y la atención en un mismo lugar, la conversación empieza con menos preguntas básicas."
           />
         </RevealTransition>
 
@@ -106,7 +106,7 @@ export const TrustGrid: React.FC = () => {
                       </motion.p>
                     </div>
                     <motion.div variants={childVariants} className="pt-2 text-[10px] text-white/30 font-medium font-sans">
-                      Transparencia desde el primer clic
+                      MENOS IDA Y VUELTA POR WHATSAPP
                     </motion.div>
                   </motion.div>
                 );
@@ -122,7 +122,7 @@ export const TrustGrid: React.FC = () => {
             >
               <div className="space-y-1 text-center sm:text-left">
                 <p className="text-sm font-semibold text-white">
-                  ¿Listo para ver los productos en el catálogo?
+                  Así se ve una tienda cuando la información está en orden.
                 </p>
                 <p className="text-xs text-white/50 font-sans">
                   Los datos mostrados en NOVA MOBILE son ilustrativos.
@@ -132,7 +132,7 @@ export const TrustGrid: React.FC = () => {
                 href="#catalogo"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-gray-200 font-semibold text-xs sm:text-sm transition-all duration-200"
               >
-                <span>Consultar un equipo</span>
+                <span>Ver equipos organizados</span>
                 <ArrowUpRight className="w-4 h-4 text-black/80" />
               </a>
             </motion.div>

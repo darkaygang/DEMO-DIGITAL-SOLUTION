@@ -31,7 +31,7 @@ export const OptionalReviewsModule: React.FC = () => {
                 <MessageSquareQuote className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-medium uppercase tracking-widest px-2.5 py-1 rounded-full bg-white/5 text-white/70 border border-white/10">
-                MÓDULO OPCIONAL
+                MEJORA OPCIONAL
               </span>
             </div>
             <span className="text-xs text-white/50 font-medium flex items-center gap-1 font-sans">
@@ -41,10 +41,10 @@ export const OptionalReviewsModule: React.FC = () => {
           </div>
 
           <h3 className="text-xl sm:text-2xl font-normal text-white font-serif-editorial">
-            Reseñas verificadas
+            Una mejora para reforzar confianza real.
           </h3>
           <p className="text-sm text-white/70 leading-relaxed font-sans">
-            Muestra opiniones reales desde Google o Instagram y añade un enlace para que nuevos clientes dejen una reseña real. Disponible como mejora para tu catálogo.
+            Si ya tienes reseñas reales en Google o Instagram, puedes mostrarlas en tu catálogo y facilitar que nuevos clientes dejen una opinión verificable.
           </p>
 
           <p className="text-xs text-white/40 italic pt-3 mt-3 border-t border-white/10 font-sans">

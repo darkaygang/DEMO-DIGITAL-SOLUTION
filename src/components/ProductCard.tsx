@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle, Eye, ShieldCheck } from 'lucide-react';
 import { Product } from '../types/product';
-import { DEMO_PHONE_NUMBER, getProductWhatsAppMessage, getWhatsAppUrl } from '../data/products';
+import { STORE_DEMO_WHATSAPP_NUMBER, getProductWhatsAppMessage, getWhatsAppUrl } from '../data/products';
 
 interface ProductCardProps {
   product: Product;
@@ -21,7 +21,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const isInkBlue = theme === 'ink-blue';
   
   const quickWaUrl = getWhatsAppUrl(
-    DEMO_PHONE_NUMBER,
+    STORE_DEMO_WHATSAPP_NUMBER,
     getProductWhatsAppMessage(product.name, product.capacity, 'contado')
   );
 
@@ -29,11 +29,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     e.stopPropagation(); // Prevents triggering modal open
   };
 
-  const cardClass = isLight
-    ? "group cursor-pointer rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full relative bg-white/40 border border-[#131313]/10 backdrop-blur-sm shadow-sm transition-all duration-220 desktop-hover-product"
+  const cardClass = isLight 
+    ? "group cursor-pointer rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full relative bg-white/40 border border-[#131313]/10 backdrop-blur-sm shadow-sm transition-all duration-220 desktop-hover-product card-iridescent-border" 
     : isInkBlue 
-    ? "group cursor-pointer rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full relative bg-[#131313]/40 border border-white/10 backdrop-blur-md shadow-lg shadow-black/20 hover:bg-[#131313]/60 transition-all duration-220 desktop-hover-product"
-    : "group cursor-pointer rounded-2xl display-card p-4 sm:p-5 flex flex-col justify-between h-full relative transition-all duration-220 desktop-hover-product";
+    ? "group cursor-pointer rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full relative bg-[#131313]/40 border border-white/10 backdrop-blur-md shadow-lg shadow-black/20 hover:bg-[#131313]/60 transition-all duration-220 desktop-hover-product card-iridescent-border" 
+    : "group cursor-pointer rounded-2xl display-card p-4 sm:p-5 flex flex-col justify-between h-full relative transition-all duration-220 desktop-hover-product card-iridescent-border";
 
   const badgeClass = isLight 
     ? "text-[10px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#131313]/5 border border-[#131313]/10 text-[#131313]/70"

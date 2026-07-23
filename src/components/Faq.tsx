@@ -16,11 +16,11 @@ const FAQS: FaqItem[] = [
   },
   {
     question: '¿Quién actualiza los modelos y precios?',
-    answer: 'En una implementación real puedes enviar los cambios para actualizarlos con la frecuencia que acuerdes con tu proveedor.',
+    answer: 'En una implementación real, los cambios se actualizan según la modalidad de mantenimiento que acuerdes con Digital Solution.',
   },
   {
     question: '¿Qué pasa si cambia mi política de cuotas?',
-    answer: 'Los textos de cuotas y parte de pago se ajustan sin cambiar la estructura del catálogo.',
+    answer: 'Se ajustan los textos y condiciones del catálogo para que reflejen la forma en que tu tienda vende en ese momento.',
   },
   {
     question: '¿Puedo usar este enlace en mi bio de Instagram?',
@@ -28,7 +28,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: '¿Tengo que dejar de vender por WhatsApp?',
-    answer: 'No. El catálogo está creado para complementar WhatsApp, no para reemplazarlo.',
+    answer: 'No. El catálogo está pensado para complementar WhatsApp: organiza la información antes de la conversación y el cierre sigue siendo contigo.',
   },
 ];
 
@@ -63,9 +63,9 @@ export const Faq: React.FC = () => {
         <RevealTransition type="fade-up">
           <SectionHeading
             theme="light"
-            eyebrow="PREGUNTAS FRECUENTES"
-            title="Pensado para tu forma actual de vender."
-            italicWord="vender"
+            eyebrow="PREGUNTAS DE DUEÑOS DE TIENDA"
+            title="Hecho para ordenar tu forma actual de vender."
+            italicWord="vender."
           />
         </RevealTransition>
 

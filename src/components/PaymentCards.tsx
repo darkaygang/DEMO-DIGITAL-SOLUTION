@@ -14,23 +14,26 @@ export const PaymentCards: React.FC = () => {
     {
       icon: Banknote,
       title: 'Contado',
-      text: 'Muestra los métodos que ya manejas: Zelle, Binance, Pago Móvil, Bancos Nacionales y efectivo.',
-      badge: 'Estructura DEMO',
-      tags: ['Zelle', 'Binance', 'Bancos Nacionales']
+      text: 'Muestra los métodos que realmente manejas: transferencia, Pago Móvil, Zelle, efectivo o Binance.',
+      badge: 'CONFIGURABLE PARA TU TIENDA',
+      tags: ['Zelle', 'Binance', 'Bancos Nacionales'],
+      note: 'Se adapta a los métodos que ya aceptas.'
     },
     {
       icon: CalendarClock,
       title: 'Cuotas',
-      text: 'Explica la inicial, la cantidad de cuotas y la frecuencia de pago en un solo bloque.',
-      badge: 'Estructura DEMO',
-      tags: ['Cashea', 'Krece']
+      text: 'Explica la inicial, la cantidad de cuotas y la frecuencia de pago para evitar preguntas básicas antes de la conversación.',
+      badge: 'CONFIGURABLE PARA TU TIENDA',
+      tags: ['Cashea', 'Krece'],
+      note: 'Condiciones configurables según tu tienda.'
     },
     {
       icon: RefreshCw,
       title: 'Parte de pago',
-      text: 'Resume qué equipos aceptas, el estado mínimo y cómo haces la evaluación.',
-      badge: 'Estructura DEMO',
-      tags: []
+      text: 'Indica qué equipos consideras, qué estado mínimo aceptas y cómo realizas la evaluación.',
+      badge: 'CONFIGURABLE PARA TU TIENDA',
+      tags: [],
+      note: 'La propuesta final se confirma por WhatsApp.'
     },
   ];
 
@@ -57,9 +60,9 @@ export const PaymentCards: React.FC = () => {
           <SectionHeading
             theme="dark"
             eyebrow="FORMAS DE PAGO"
-            title="Lo importante, claro antes de escribir."
+            title="Las preguntas de pago, claras desde la ficha."
             italicWord="escribir"
-            paragraph="Contado, cuotas y parte de pago pueden explicarse en un mismo enlace y también dentro de cada ficha."
+            paragraph="Muestra contado, inicial, cuotas o parte de pago antes de que el cliente tenga que preguntarte. Tú defines las condiciones reales de tu tienda."
           />
         </RevealTransition>
 
@@ -151,7 +154,7 @@ export const PaymentCards: React.FC = () => {
                   </div>
 
                   <div className="pt-4 border-t border-white/10 text-[11px] text-white/40 font-sans relative z-10">
-                    Adaptable a las políticas comerciales de cada tienda.
+                    {method.note}
                   </div>
                 </div>
               </RevealTransition>

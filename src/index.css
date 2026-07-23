@@ -148,6 +148,7 @@
 }
 .desktop-hover-product:active {
   transform: scale(0.985);
+  transition-duration: 0.12s;
 }
 
 
@@ -163,4 +164,26 @@
 }
 .animate-pulse-glow {
   animation: pulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+
+/* Iridescent Active Border */
+.card-iridescent-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(138, 124, 255, 0.6), rgba(37, 211, 102, 0.6), rgba(255, 255, 255, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.card-iridescent-border:hover::after,
+.card-iridescent-border:focus-visible::after,
+.card-iridescent-border:active::after {
+  opacity: 1;
 }

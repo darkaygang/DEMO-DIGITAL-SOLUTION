@@ -38,7 +38,7 @@ export const Catalog: React.FC<CatalogProps> = ({
       : products.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="catalogo" className="relative pb-20 sm:pb-28 bg-[#080808] border-b border-white/10 z-20 pt-20 sm:pt-28">
+    <section id="catalogo" className="relative pb-20 sm:pb-28 bg-[#0A0E17] border-b border-white/10 z-20 pt-20 sm:pt-28">
       
       
       
@@ -47,23 +47,21 @@ export const Catalog: React.FC<CatalogProps> = ({
         
         {/* Sequence: Eyebrow, then heading, then filters, then counter */}
         <div className="space-y-4">
-          <RevealTransition type="fade-up" staggerChildren={0.1}>
+          <RevealTransition type="clip-path">
             <SectionHeading
               eyebrow="CATÁLOGO DEMO"
-              title="Encuentra lo que buscas, sin perderte en el feed."
+              title="Que cada cliente encuentre lo que busca antes de escribir."
               italicWord="feed"
-              paragraph="Cada ficha organiza modelo, memoria, estado y formas de consulta antes de abrir WhatsApp."
+              paragraph="En vez de preguntar “¿qué tienes disponible?”, el cliente puede revisar modelos, memoria, estado y opciones de pago antes de abrir WhatsApp."
             />
           </RevealTransition>
 
-          <Reveal delay={0.3} y={12} duration={0.6}>
-            <CategoryFilters
+          <CategoryFilters
               categories={CATEGORIES}
               activeCategory={activeCategory}
               onSelectCategory={onSelectCategory}
               resultCount={filteredProducts.length}
             />
-          </Reveal>
         </div>
 
         {/* Animated Catalog Grid */}
@@ -79,7 +77,7 @@ export const Catalog: React.FC<CatalogProps> = ({
                 initial={{ opacity: 0, translateY: prefersReducedMotion ? 0 : 12 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: prefersReducedMotion ? 0 : -12 }}
-                transition={{ duration: 0.16 }}
+                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
               >
                 <ProductCard
                   product={product}

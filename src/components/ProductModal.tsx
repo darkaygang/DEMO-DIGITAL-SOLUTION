@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { X, MessageCircle, CalendarClock, RefreshCw, Banknote, ShieldCheck, AlertCircle } from 'lucide-react';
 import { Product } from '../types/product';
-import { getProductWhatsAppMessage, getWhatsAppUrl, DEMO_PHONE_NUMBER } from '../data/products';
+import { getProductWhatsAppMessage, getWhatsAppUrl, STORE_DEMO_WHATSAPP_NUMBER } from '../data/products';
 import { motion, useReducedMotion } from 'motion/react';
 
 interface ProductModalProps {
@@ -38,17 +38,17 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
   if (!product) return null;
 
   const cashWaUrl = getWhatsAppUrl(
-    DEMO_PHONE_NUMBER,
+    STORE_DEMO_WHATSAPP_NUMBER,
     getProductWhatsAppMessage(product.name, product.capacity, 'contado')
   );
   
   const installmentWaUrl = getWhatsAppUrl(
-    DEMO_PHONE_NUMBER,
+    STORE_DEMO_WHATSAPP_NUMBER,
     getProductWhatsAppMessage(product.name, product.capacity, 'cuotas')
   );
   
   const tradeInWaUrl = getWhatsAppUrl(
-    DEMO_PHONE_NUMBER,
+    STORE_DEMO_WHATSAPP_NUMBER,
     getProductWhatsAppMessage(product.name, product.capacity, 'parte_de_pago')
   );
 

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowDown, MessageCircle, Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { DEMO_PHONE_NUMBER, GENERAL_WHATSAPP_MESSAGE, getWhatsAppUrl } from '../data/products';
+import { STORE_DEMO_WHATSAPP_NUMBER, GENERAL_WHATSAPP_MESSAGE, getWhatsAppUrl, getDigitalSolutionWhatsAppUrl } from '../data/products';
 import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 
 interface HeroProps {
@@ -9,21 +9,17 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
-  const generalWaUrl = getWhatsAppUrl(DEMO_PHONE_NUMBER, GENERAL_WHATSAPP_MESSAGE);
+  const generalWaUrl = getDigitalSolutionWhatsAppUrl();
   const containerRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 0.45], [0, prefersReducedMotion ? 0 : -70]);
+  const scale = useTransform(scrollYProgress, [0, 0.45], [1, prefersReducedMotion ? 1 : 1.10]);
+  const rotateZ = useTransform(scrollYProgress, [0, 0.45], [0, prefersReducedMotion ? 0 : 3]);
+  const opacity = useTransform(scrollYProgress, [0.35, 0.45], [1, 0]);
+  const labelsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.35, 0.45], [0, 1, 1, 0]);
+  const labelsY = useTransform(scrollYProgress, [0, 0.1], [20, 0]);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  // Moves the showcase up slightly on scroll
-  const y = useTransform(scrollYProgress, [0, 1], [0, prefersReducedMotion ? 0 : -100]);
-  // Slowly rotates the showcase
-  const rotateX = useTransform(scrollYProgress, [0, 1], [0, prefersReducedMotion ? 0 : 10]);
-  const rotateY = useTransform(scrollYProgress, [0, 1], [-10, prefersReducedMotion ? -10 : -20]);
-  
   return (
     <section ref={containerRef} className="relative min-h-[100svh] flex flex-col justify-between pt-28 sm:pt-36 pb-12 overflow-hidden bg-black border-b border-white/10 [perspective:1000px]">
       
@@ -37,11 +33,33 @@ export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
       <div className="absolute inset-0 flex items-center justify-end md:justify-center pointer-events-none z-0 opacity-80 overflow-hidden">
         <motion.div 
           className="relative w-full max-w-6xl h-full flex items-center justify-end pr-4 sm:pr-10 md:justify-end lg:pr-32"
-          style={{ y, rotateX, rotateY, transformStyle: 'preserve-3d' }}
+          style={{ y, scale, rotateZ, opacity, transformStyle: 'preserve-3d' }}
         >
           {/* Authentic 3D iPhone Presentation */}
           <div className="relative w-full max-w-[400px] aspect-[1/2] flex items-center justify-center translate-y-12 sm:translate-y-0" style={{ perspective: '1500px' }}>
+            
+            {/* Tech Labels */}
+            <motion.div style={{ opacity: labelsOpacity, y: labelsY }} className="absolute -left-4 sm:-left-12 top-1/4 z-50">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-xs font-mono font-medium shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></div>
+                256 GB
+              </div>
+            </motion.div>
+            <motion.div style={{ opacity: labelsOpacity, y: labelsY }} className="absolute -right-2 sm:-right-10 top-1/3 z-50">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-xs font-mono font-medium shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+                Cuotas claras
+              </div>
+            </motion.div>
+            <motion.div style={{ opacity: labelsOpacity, y: labelsY }} className="hidden sm:block absolute -left-2 sm:-left-8 bottom-1/4 z-50">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#25D366]/20 backdrop-blur-md border border-[#25D366]/40 text-white text-[10px] sm:text-xs font-mono font-medium shadow-[0_0_15px_rgba(37,211,102,0.15)]">
+                <MessageCircle className="w-3 h-3 text-[#25D366]" />
+                WhatsApp listo
+              </div>
+            </motion.div>
+            
             {/* Ambient Glow behind the phone */}
+
             <div className="absolute inset-0 bg-gradient-to-tr from-[#8A7CFF]/50 via-transparent to-[#25D366]/40 blur-3xl rounded-full opacity-70 mix-blend-screen scale-125 animate-pulse" />
             
             <motion.div
@@ -152,27 +170,24 @@ export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
               CATÁLOGO WEB PARA WHATSAPP
             </span>
             <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-[10px] font-medium tracking-widest uppercase">
-              DEMO ILUSTRATIVA
+              DEMO PARA TIENDAS DE TECNOLOGÍA
             </span>
           </div>
 
           {/* Editorial H1 Headline with Instrument Serif */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-normal text-white tracking-tight leading-[0.98] font-serif-editorial drop-shadow-sm">
-            Tu próximo equipo
+            ¿Cuántas ventas pierdes
             <br />
-            <span className="font-serif-italic font-normal text-white/90 pr-2">
-              empieza
-            </span>{' '}
-            aquí.
+            cuando <span className="font-serif-italic font-normal text-white/90">respondes demasiado tarde</span>?
           </h1>
 
           {/* Subheading & Description */}
           <div className="space-y-2">
             <p className="text-base sm:text-xl font-medium text-white/90 tracking-wide font-sans">
-              Modelos, cuotas y garantía en un solo lugar.
+              Si el cliente no consigue precio, cuotas o disponibilidad rápido, probablemente pregunta en otra tienda.
             </p>
             <p className="text-sm sm:text-base text-white/60 max-w-lg sm:max-w-xl leading-relaxed font-sans font-normal">
-              Encuentra el equipo que buscas y escribe por WhatsApp con el modelo y la forma de pago ya seleccionados.
+              Este catálogo reúne tus equipos y condiciones en un solo enlace para que cada persona llegue a WhatsApp sabiendo mejor qué quiere consultar.
             </p>
           </div>
 
@@ -183,7 +198,7 @@ export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
                 onClick={onUnlock}
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full liquid-glass-strong hover:bg-white/10 text-white font-medium text-xs sm:text-sm transition-all duration-300 hover:scale-[1.01] active:scale-[0.98] border border-white/20 animate-pulse-glow"
               >
-                <span>Ver equipos</span>
+                <span>Ver cómo comprarían tus clientes</span>
                 <ArrowDown className="w-3.5 h-3.5 text-white/70" />
               </button>
             ) : (
@@ -191,7 +206,7 @@ export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
                 href="#modelos"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full liquid-glass-strong hover:bg-white/10 text-white font-medium text-xs sm:text-sm transition-all duration-300 hover:scale-[1.01] active:scale-[0.98] border border-white/20 animate-pulse-glow"
               >
-                <span>Ver equipos</span>
+                <span>Ver cómo comprarían tus clientes</span>
                 <ArrowDown className="w-3.5 h-3.5 text-white/70" />
               </a>
             )}
@@ -202,13 +217,13 @@ export const Hero: React.FC<HeroProps> = ({ isUnlocked, onUnlock }) => {
               className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#25D366] hover:brightness-110 text-black font-semibold text-xs sm:text-sm transition-all duration-300 hover:scale-[1.01] active:scale-[0.98] shadow-lg shadow-emerald-950/30"
             >
               <MessageCircle className="w-4 h-4 fill-black stroke-none" />
-              <span>Consultar por WhatsApp</span>
+              <span>Quiero uno para mi tienda</span>
             </a>
           </div>
 
           {/* Microcopy */}
           <p className="text-xs text-black/80 font-medium italic font-sans relative z-40 pt-2 drop-shadow-sm">
-            Demo creada por Digital Solution para mostrar cómo podría verse tu propio catálogo.
+            Creado por Digital Solution para tiendas que venden por Instagram y WhatsApp.
           </p>
         </div>
       </div>

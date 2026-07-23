@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
               Catálogo DEMO creado por <strong className="text-white font-medium">Digital Solution</strong>.
             </p>
             <p className="text-[11px] text-white/40">
-              Diseñado para tiendas de celulares y tecnología en Barquisimeto, Venezuela.
+              Una demo de Digital Solution para mostrar cómo una tienda puede organizar sus equipos antes de la conversación por WhatsApp.
             </p>
           </div>
           

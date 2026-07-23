@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
-import { DEMO_PHONE_NUMBER, GENERAL_WHATSAPP_MESSAGE, getWhatsAppUrl } from '../data/products';
+import { getDigitalSolutionWhatsAppUrl } from '../data/products';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const generalWaUrl = getWhatsAppUrl(DEMO_PHONE_NUMBER, GENERAL_WHATSAPP_MESSAGE);
+  const generalWaUrl = getDigitalSolutionWhatsAppUrl();
 
   return (
     <header
@@ -82,7 +82,8 @@ export const Header: React.FC = () => {
             aria-label="Consultar por WhatsApp"
           >
             <MessageCircle className="w-3.5 h-3.5 fill-black stroke-none" />
-            <span className="font-semibold text-xs tracking-tight">WhatsApp</span>
+            <span className="hidden sm:inline-block font-semibold text-xs tracking-tight">Quiero este catálogo</span>
+            <span className="sm:hidden font-semibold text-xs tracking-tight">Quiero el mío</span>
           </a>
         </div>
 

@@ -1,6 +1,6 @@
 import { Product } from '../types/product';
 
-export const DEMO_PHONE_NUMBER = '584120000000';
+export const STORE_DEMO_WHATSAPP_NUMBER = '584120000000';
 
 export const PRODUCTS: Product[] = [
   {
@@ -142,11 +142,11 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const GENERAL_WHATSAPP_MESSAGE = 'Hola, vi el Catálogo Web para WhatsApp de NOVA MOBILE. Quiero consultar un equipo.';
-export const DIGITAL_SOLUTION_WHATSAPP_MESSAGE = 'Hola, vi la demo de NOVA MOBILE y quiero conocer cómo funcionaría un Catálogo Web para WhatsApp para mi tienda.';
-export const DIGITAL_SOLUTION_PHONE_NUMBER = '573215885381';
+export const DIGITAL_SOLUTION_WHATSAPP_MESSAGE = 'Hola, vi la demo de NOVA MOBILE. Quiero saber cómo adaptar un Catálogo Web para WhatsApp a mi tienda.';
+export const DIGITAL_SOLUTION_WHATSAPP_NUMBER = '573215885381';
 
 export function getDigitalSolutionWhatsAppUrl(): string {
-  return `https://api.whatsapp.com/send/?phone=${DIGITAL_SOLUTION_PHONE_NUMBER}&text=${encodeURIComponent(DIGITAL_SOLUTION_WHATSAPP_MESSAGE)}&type=phone_number&app_absent=0`;
+  return `https://api.whatsapp.com/send/?phone=${DIGITAL_SOLUTION_WHATSAPP_NUMBER}&text=${encodeURIComponent(DIGITAL_SOLUTION_WHATSAPP_MESSAGE)}&type=phone_number&app_absent=0`;
 }
 
 export function getWhatsAppUrl(phone: string, text: string): string {

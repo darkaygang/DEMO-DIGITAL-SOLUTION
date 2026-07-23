@@ -39,7 +39,7 @@ export const OwnerCTA: React.FC = () => {
             transition={{ duration: 0.6, delay: prefersReducedMotion ? 0 : 0.1 }}
           >
             <Sparkles className="w-3.5 h-3.5 text-white/70" />
-            <span>DIGITAL SOLUTION</span>
+            <span>DIGITAL SOLUTION · BARQUISIMETO</span>
           </motion.div>
 
           {/* Heading with Instrument Serif and line reveal */}
@@ -50,7 +50,8 @@ export const OwnerCTA: React.FC = () => {
               animate={isInView ? { y: 0, opacity: 1 } : { y: prefersReducedMotion ? 0 : '100%', opacity: prefersReducedMotion ? 0 : 1 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: prefersReducedMotion ? 0 : 0.15 }}
             >
-              ¿Esta estructura funcionaría <span className="font-serif-italic">para tu tienda?</span>
+              No necesitas dejar WhatsApp.
+            Necesitas dejar de explicar lo mismo <span className="font-serif-italic">todos los días.</span>
             </motion.h2>
           </div>
 
@@ -61,7 +62,7 @@ export const OwnerCTA: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: prefersReducedMotion ? 0 : 12 }}
             transition={{ duration: 0.6, delay: prefersReducedMotion ? 0 : 0.25 }}
           >
-            Digital Solution puede adaptar este catálogo a tus equipos, cuotas, garantía, parte de pago, ubicación y horario. Mantienes WhatsApp como canal principal; nosotros organizamos la información que ya explicas todos los días.
+            Adaptamos el catálogo a tus equipos, precios, cuotas, garantía, parte de pago, ubicación, horarios y métodos de entrega. Mantienes WhatsApp como canal principal; el cliente llega con más información antes de escribirte.
           </motion.p>
 
           {/* Main CTA */}
@@ -75,10 +76,17 @@ export const OwnerCTA: React.FC = () => {
               href={dsWaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] hover:brightness-110 text-black font-semibold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(37,211,102,0.2)] overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] hover:brightness-110 text-black font-semibold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
             >
+              {/* Reflection Sweep on enter */}
+              <motion.div 
+                className="absolute top-0 bottom-0 w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]"
+                initial={{ left: '-100%' }}
+                animate={isInView ? { left: '200%' } : { left: '-100%' }}
+                transition={{ duration: 1.2, delay: 0.8, ease: "easeInOut" }}
+              />
               <MessageCircle className="w-5 h-5 fill-black stroke-none relative z-10" />
-              <span className="relative z-10">Hablar con Digital Solution</span>
+              <span className="relative z-10">Quiero adaptarlo a mi tienda</span>
               <ArrowRight className="w-4.5 h-4.5 relative z-10" />
             </a>
           </motion.div>
@@ -90,7 +98,7 @@ export const OwnerCTA: React.FC = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: prefersReducedMotion ? 0 : 0.5 }}
           >
-            Catálogo Web para WhatsApp · Implementación desde $80 · 50% para iniciar
+            Catálogo Web para WhatsApp · Desde $80 · 50% para iniciar<br/><span className="text-[10px] text-white/30 mt-2 block">Para tiendas de celulares y tecnología en Barquisimeto y Cabudare.</span>
           </motion.p>
 
         </motion.div>
