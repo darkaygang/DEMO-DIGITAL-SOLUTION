@@ -1,0 +1,6 @@
+{
+  "name": "NOVA MOBILE",
+  "description": "Catálogo Web para WhatsApp - Demo Comercial por Digital Solution",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
