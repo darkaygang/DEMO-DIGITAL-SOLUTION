@@ -1,0 +1,7 @@
+[
+  {"name":"Cashea","file":"cashea.png","url":"https://cdn.prod.website-files.com/632db6924fcc7661685adfa8/664776c9b680e021178d3a07_Logo_Cashea.png","source":"https://www.cashea.app/","verification":"Logo público utilizado por el proyecto original; PNG inspeccionado visualmente. Wordmark negro y símbolo amarillo."},
+  {"name":"Krece","file":"krece.png","url":"https://www.krece.app/krece-logo-black.png?v=20260612-collage2","source":"https://www.krece.app/","verification":"Extraído del HTML del sitio oficial; PNG inspeccionado visualmente. Wordmark azul marino."},
+  {"name":"ZOOM","file":"zoom.png","url":"https://zoom.red/wp-content/uploads/2021/01/Logo-Zoom-Registrado.png","source":"https://zoom.red/","verification":"Extraído del HTML del sitio oficial; PNG inspeccionado visualmente. Logo azul con canguro negro."},
+  {"name":"MRW","file":"mrw.svg","url":"https://upload.wikimedia.org/wikipedia/commons/2/26/MRW_logo.svg","source":"https://commons.wikimedia.org/wiki/File:MRW_logo.svg","verification":"SVG público del logo MRW ya referenciado por el proyecto original. mrw.com.ve no resolvió durante consulta. SVG examinado sin scripts, foreignObject, eventos ni referencias remotas."},
+  {"name":"Tealca","file":"tealca.svg","url":"https://www.tealca.com/wp-content/uploads/2021/06/001_LOGO_HEADER.svg","source":"https://www.tealca.com/","verification":"SVG alojado en sitio oficial. Examinado sin scripts, foreignObject, eventos ni referencias remotas."}
+]
