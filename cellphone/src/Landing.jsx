@@ -1,3 +1,4 @@
+import solutionLogo from "../assets/logos/digital-solution.png";
 import Icon, {iconText} from './Icon';
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
@@ -17,7 +18,7 @@ export default function Landing({onSelect, theme, onToggleTheme}) {
   return <div className="land-page">
     <div className="land-grid-noise" aria-hidden="true"/>
     <header className="land-header land-wrap">
-      <a className="land-logo" href="#inicio" aria-label="Digital Solution, inicio"><span className="land-symbol">d<span><Icon name="northeast"/></span></span><span>DIGITAL<br/>SOLUTION</span></a>
+      <a className="land-logo" href="#inicio" aria-label="Digital Solution, inicio"><img className="land-brand-image" src={solutionLogo} alt="Digital Solution" width="2172" height="724"/></a>
       <nav aria-label="Navegación principal"><a href="#solucion">La diferencia</a><a href="#experiencias">Las 3 experiencias</a><a href="#editable">Hazlo tuyo</a></nav>
       <button className="land-theme" onClick={onToggleTheme} aria-label={theme==='dark'?'Activar modo claro':'Activar modo oscuro'}><span aria-hidden="true">{theme==='dark'?iconText("☀"):iconText("☾")}</span><span>{theme==='dark'?'Modo claro':'Modo oscuro'}</span></button>
     </header>
