@@ -1,3 +1,4 @@
+import Icon, {iconText} from './Icon';
 import React, { useEffect, useId, useMemo, useRef, useState } from 'react';
 import './comparison.css';
 
@@ -56,12 +57,12 @@ export default function Comparison({ products = [], selectedIds = [], onToggle, 
     const box = ref.current.getBoundingClientRect();
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) ref.current.close();
   }}>
-    <header className="compare-top"><div><span>COMPARADOR / DOS EQUIPOS</span><h2 id={id + '-title'}>Míralos lado a lado.</h2></div><button ref={closeRef} type="button" className="compare-close" aria-label="Cerrar comparador" onClick={() => ref.current.close()}>×</button></header>
+    <header className="compare-top"><div><span>COMPARADOR / DOS EQUIPOS</span><h2 id={id + '-title'}>Míralos lado a lado.</h2></div><button ref={closeRef} type="button" className="compare-close" aria-label="Cerrar comparador" onClick={() => ref.current.close()}><Icon name="close"/></button></header>
     <div className="compare-body">
       <p className="compare-intro">Compara precios y características para decidir qué consultar. Los campos sin datos aparecen como pendientes de confirmar.</p>
       <div className="compare-choices">{pair.map((product, slot) => <section className="compare-choice" key={slot}>
         <label htmlFor={id + '-select-' + slot}>Equipo {slot + 1}<select id={id + '-select-' + slot} value={product?.id || ''} onChange={event => choose(slot, event.target.value)}><option value="">Selecciona un teléfono</option>{choices.map(option => <option key={option.id} value={option.id} disabled={validIds.includes(option.id) && product?.id !== option.id}>{option.name}</option>)}</select></label>
-        <div className="compare-photo">{product?.image ? <img src={product.image} alt={product.name} width="260" height="220" /> : <span aria-hidden="true">＋</span>}</div>
+        <div className="compare-photo">{product?.image ? <img src={product.image} alt={product.name} width="260" height="220" /> : <span aria-hidden="true"><Icon name="plus"/></span>}</div>
         <h3>{product?.name || 'Tu siguiente opción'}</h3><p>{product && hasPrice(product.price) ? money(product.price) + ' USD' : product ? 'Por confirmar' : 'Selecciona un equipo'}</p><small>{product ? 'Precio de referencia' : 'Puedes elegir entre los modelos del catálogo'}</small>
       </section>)}</div>
       <div className="compare-toolbar"><label><input type="checkbox" checked={differencesOnly} disabled={selected.length !== 2} onChange={event => setDifferencesOnly(event.target.checked)} /> Mostrar solo diferencias</label>{onClear && selected.length > 0 ? <button type="button" onClick={onClear}>Limpiar selección</button> : null}</div>

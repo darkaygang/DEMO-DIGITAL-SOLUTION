@@ -148,3 +148,12 @@
  .shop-root[data-design=nexo] .shop-product:first-child .shop-product-info{padding:16px 11px}
  .shop-root[data-design=nexo] .shop-product:first-child h3{font-size:19px}
 }
+
+/* Match the proposal identity in both themes; catalog panels retain theme switching. */
+.shop-root[data-design=orbita] .shop-top,[data-theme=light] .shop-root[data-design=orbita] .shop-top{background:radial-gradient(ellipse at 80% 60%,#ffffff45,transparent 65%),#d8d9d9;color:#202627}
+.shop-root[data-design=nexo] .shop-top,[data-theme=light] .shop-root[data-design=nexo] .shop-top{background-color:#e95f36;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:40px 40px;color:#181e1c}
+.shop-root:is([data-design=orbita],[data-design=nexo]) .shop-header{border-color:#20262730}
+.shop-root:is([data-design=orbita],[data-design=nexo]) .shop-theme{border-color:#20262766}
+.shop-root:is([data-design=orbita],[data-design=nexo]) .shop-hero-product{border-color:#20262744;background:#ffffff35}
+.shop-root[data-design=orbita] .shop-hero-sticker{color:#202627;border-color:#20262744}
+.shop-root[data-design=nexo] .shop-nexo-rail{border-color:#181e1c40;color:#181e1c}
